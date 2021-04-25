@@ -50,7 +50,9 @@ export default class SbtPlugin implements IPlugin {
 
     async function sbtPublish() {
       auto.logger.log.info("Run sbt publish");
-      return await sbtClient("publish");
+      const publishLog = await sbtClient("publish");
+      auto.logger.log.info(publishLog);
+      return publishLog;
     }
 
     auto.hooks.validateConfig.tapPromise(this.name, async (name, options) => {
