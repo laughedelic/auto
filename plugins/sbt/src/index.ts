@@ -91,7 +91,7 @@ export default class SbtPlugin implements IPlugin {
           `"Update version to ${prefixedTag}"`,
         ]);
 
-        auto.logger.log.info("Set version in sbt");
+        auto.logger.log.info("Set version in sbt 1");
         await execPromise("sbt", [
           "--client",
           `set every version := \\"${newTag}\\"`,
