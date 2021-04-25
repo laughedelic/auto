@@ -1,6 +1,8 @@
 import { Auto, IPlugin } from "@auto-it/core";
 import * as t from "io-ts";
-declare const pluginOptions: t.PartialC<{}>;
+declare const pluginOptions: t.PartialC<{
+    manageVersion: t.BooleanC;
+}>;
 export declare type ISbtPluginOptions = t.TypeOf<typeof pluginOptions>;
 /** Publish Scala projects with sbt */
 export default class SbtPlugin implements IPlugin {
