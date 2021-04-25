@@ -94,7 +94,7 @@ export default class SbtPlugin implements IPlugin {
         auto.logger.log.info("Set version in sbt");
         await execPromise("sbt", [
           "--client",
-          `'set every version := "${newTag}"'`,
+          `set every version := \\"${newTag}\\"`,
         ]);
       },
     );
